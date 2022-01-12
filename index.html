@@ -63,7 +63,7 @@
         <section class="hero">
             <div class="hero-container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button class="btn hero-btn" type="button">Заказать услугу</button>
+                <button class="btn hero-btn" type="button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
         <!-- Секция с преимуществами компании -->
@@ -397,6 +397,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Бекдроп и модальное окно -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="btn modal-close-btn" data-modal-close>
+                <svg class="modal-close-btn-icon">
+                    <use href="./images/icons.svg#icon-cross-form-icon"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- JS для модального окна -->
+    <script src="./js/modal.js"></script>
 
 </body>
 </html>

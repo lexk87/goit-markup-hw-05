@@ -87,6 +87,7 @@ body {
 .btn {
     cursor: pointer;
     border: none;
+    padding: 0;
 }
 
 /* Картинки */
@@ -620,7 +621,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(100%);
+    transform: translateY(101%);
     transition: transform var(--transition-const);
 }
 
@@ -649,4 +650,66 @@ img {
     font-size: 16px;
     line-height: calc(30 / 16);
     color: var(--secondary-text-color);
+}
+
+/* Бекдроп и модальное окно */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity var(--transition-const), visibility var(--transition-const);
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 528px;
+    height: 581px;
+    background-color: var(--primary-bg-color);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-const);
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.7);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-close-btn:hover {
+    color: var(--accent-color);
+}
+
+.modal-close-btn-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
 }
