@@ -1,5 +1,6 @@
 /* Переменные */
 :root {
+    /* Цвета */
     --header-border-color: #ececec;
     --hero-heading-color: #ffffff;
     --hero-btn-hover-color: #188ce8;
@@ -17,6 +18,8 @@
     --team-icons-color: #afb1b8;
     --team-icons-hover-color: #ffffff;
     --footer-icons-bg-color: rgba(255, 255, 255, 0.1);
+    /* Transition */
+    --transition-const: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Сброс ненужных стилей */
@@ -152,6 +155,7 @@ img {
     line-height: calc(16 / 14);
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
+    transition: color var(--transition-const);
 }
 
 .header-nav-list-item-link:hover,
@@ -200,6 +204,7 @@ img {
     line-height: calc(16 / 14);
     letter-spacing: 0.02em;
     color: var(--secondary-text-color);
+    transition: color var(--transition-const);
 }
 
 .header-contacts-icon {
@@ -255,6 +260,7 @@ img {
     letter-spacing: 0.06em;
     color: var(--btn-primary-text-color);
     min-width: 200px;
+    transition: background-color var(--transition-const);
 }
 
 .hero-btn:hover,
@@ -394,6 +400,7 @@ img {
     height: 44px;
     border-radius: 50%;
     color: var(--team-icons-color);
+    transition: background-color var(--transition-const), color var(--transition-const);
 }
 
 .team-icon-list-item-link:hover,
@@ -426,6 +433,7 @@ img {
     border: 1px solid var(--team-icons-color);
     border-radius: 4px;
     color: var(--team-icons-color);
+    transition: color var(--transition-const), border-color var(--transition-const);
 }
 
 .clients-list-item-link:hover,
@@ -483,6 +491,7 @@ img {
 .footer-address-list-item-link {
     line-height: calc(24 / 14);
     color: var(--footer-secondary-text-color);
+    transition: color var(--transition-const);
 }
 
 .footer-address-list-item-link:hover,
@@ -518,6 +527,7 @@ img {
     height: 44px;
     border-radius: 50%;
     background-color: var(--footer-icons-bg-color);
+    transition: background-color var(--transition-const);
 }
 
 .footer-icon-list-item-link:hover,
@@ -550,6 +560,8 @@ img {
     line-height: calc(26 / 16);
     letter-spacing: 0.03em;
     color: var(--primary-text-color);
+    transition: background-color var(--transition-const), box-shadow var(--transition-const),
+        color var(--transition-const);
 }
 
 .current-btn,
@@ -577,12 +589,45 @@ img {
 
 .portfolio-example-list-item-link {
     display: block;
+    transition: box-shadow var(--transition-const);
 }
 
 .portfolio-example-list-item-link:hover,
 .portfolio-example-list-item-link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-example-list-item-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-example-list-item-link:hover .portfolio-example-list-item-thumb-card,
+.portfolio-example-list-item-link:focus .portfolio-example-list-item-thumb-card {
+    transform: translateY(0);
+}
+
+.portfolio-example-list-item-thumb-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: transform var(--transition-const);
+}
+
+.portfolio-example-list-item-thumb-card-txt {
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    color: var(--portfolio-btn-primary-color);
 }
 
 .portfolio-example-list-box {
