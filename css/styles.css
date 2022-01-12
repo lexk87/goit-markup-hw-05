@@ -458,6 +458,7 @@ img {
 /* Контейнер футера */
 .footer-container {
     display: flex;
+    align-items: baseline;
 }
 
 /* Контейнер адреса футера */
@@ -498,10 +499,6 @@ img {
 .footer-address-list-item-link:hover,
 .footer-address-list-item-link:focus {
     color: var(--accent-color);
-}
-
-.footer-icon-box {
-    padding-top: 12px;
 }
 
 .footer-icon-title {
