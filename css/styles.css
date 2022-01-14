@@ -620,13 +620,16 @@ img {
     align-items: center;
     transform: translateY(101%);
     transition: transform var(--transition-const);
-}
-
-.portfolio-example-list-item-thumb-card-txt {
     font-size: 18px;
     line-height: calc(28 / 18);
     color: var(--portfolio-btn-primary-color);
 }
+
+/* .portfolio-example-list-item-thumb-card-txt {
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    color: var(--portfolio-btn-primary-color);
+} */
 
 .portfolio-example-list-box {
     padding: 20px 24px;
